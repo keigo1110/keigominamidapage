@@ -1,0 +1,303 @@
+/* 全体のスタイリング */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* コンテナスタイル */
+.container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* ナビゲーションバー */
+.navbar {
+    background-color: #ffffff;
+    color: #333333;
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger {
+    display: none;  /* デスクトップでは非表示 */
+    font-size: 24px;
+    background: none;
+    border: none;
+}
+
+.search-form {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;  /* モバイルでは表示 */
+    }
+    .navbar-links {
+        display: none;  /* 初期状態では非表示 */
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 60px; /* navの高さに合わせて調整 */
+        background-color: #fff;
+        width: 100%;
+    }
+    .navbar-links.active {
+        display: flex;  /* メニューボタン押下時に表示 */
+    }
+    .search-form {
+        flex-grow: 1;
+    }
+}
+
+.navbar-links a {
+    color: #333333;
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: bold;
+}
+
+nav.navbar {
+    position: fixed;  /* 位置を固定 */
+    top: 0;           /* 上部からの距離 */
+    left: 0;          /* 左側からの距離 */
+    width: 100%;      /* 幅を画面全体に */
+    background-color: #fff; /* 背景色 */
+    z-index: 1000;    /* 他の要素よりも前面に表示 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 影を付けて立体感を出す */
+}
+
+.header {
+    width: 90%;      /* ヘッダーの幅を画面全体に */
+    padding: 10px 20px; /* パディングで余白を調整 */
+}
+
+.logo {
+    margin-left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* プロフィールセクション */
+.profile {
+    text-align: center;
+    padding: 80px 0;
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #eeeeee;
+}
+
+/* ソーシャルリンクアイコン */
+.social-links a {
+    display: inline-block;
+    margin: 0 0px;
+    color: #333333;
+    text-decoration: none;
+}
+
+/* About Me スタイリング */
+.about {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 5px;
+}
+
+/* プロジェクトセクション */
+#projects {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.project {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.project img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin-right: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-info {
+    flex: 1;
+}
+
+.centered-title {
+    text-align: center;
+}
+
+/* フッタースタイル */
+footer {
+    background-color: #333333;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* メディアクエリとレスポンシブ対応 */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar-links {
+        margin-top: 10px;
+    }
+
+    .navbar-links a {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .project {
+        flex-direction: column;
+    }
+
+    .project img {
+        margin: 0 0 20px 0;
+        max-width: 100%;
+    }
+}
+
+/* スティッキーナビゲーションバーのスタイル */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* スティッキーナビゲーションバー時の影を追加 */
+.sticky + .content {
+    padding-top: 60px;
+}
+
+.home-flex-container {
+    display: flex;
+    justify-content: space-between; /* 内容に応じて調整が必要かもしれません */
+    align-items: center; /* 垂直方向の中央揃えが必要であれば */
+    padding: 0px 0; /* 適宜調整してください */
+}
+
+.profile,
+.about {
+    flex-basis: 100%; /* 適宜調整してください */
+    /* flex-basisの値は、両カラムの希望の幅に応じて調整できます */
+}
+
+/* プロファイル画像のスタイル調整 */
+.profile-image {
+    width: 100%;
+    max-width: 250px; /* 画像の最大サイズを設定 */
+    height: auto;
+    margin-bottom: 5px; /* 必要に応じて調整 */
+}
+
+/* ソーシャルリンクのスタイル調整 */
+.social-links {
+    margin-top: 10px; /* 上部の要素からの余白 */
+}
+
+/* レスポンシブデザインのためのスタイル */
+@media (max-width: 768px) {
+    .home-flex-container {
+        flex-direction: column;
+        text-align: center; /* 中央揃えにしたい場合 */
+    }
+
+    .profile,
+    .about {
+        flex-basis: 100%; /* スマートフォン表示ではカラムを重ねる */
+    }
+
+    .profile-image {
+        margin: 0 auto; /* 中央揃えにする */
+    }
+}
+
+/* 経験セクションのスタイル */
+#experience {
+    margin: 50px 0;
+}
+
+.experience-item {
+    position: relative;
+    margin-left: 20px; /* 左側の青線の幅に応じて調整してください */
+}
+
+.year-position::before {
+    content: '';
+    position: absolute;
+    left: -20px; /* 青線の位置を調整 */
+    top: 0;
+    bottom: 0;
+    width: 4px; /* 青線の幅 */
+    background-color: blue; /* 青線の色 */
+}
+
+.experience-details h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.experience-details p {
+    margin: 5px 0 20px;
+}
+
+/* 賞と栄誉セクションのスタイル */
+#awards {
+    margin: 50px 0;
+}
+
+#awards ul {
+    list-style: none;
+    padding: 0;
+}
+
+#awards li::before {
+    content: '•';
+    color: black; /* 点の色 */
+    font-size: 1.5em; /* 点の大きさ */
+    padding-right: 8px; /* 点とテキストの間のスペース */
+    vertical-align: middle;
+}
+
+/* FontAwesome */
+.social-links {
+    /* スタイルの調整 */
+    text-align: center;
+}
+
+.social-links a {
+    /* アイコンのスタイル */
+    color: #333; /* アイコンの色 */
+    margin: 0 10px;
+    font-size: 24px; /* アイコンのサイズ */
+    text-decoration: none; /* アンダーラインを消去 */
+}
+
+.social-links a:hover {
+    /* ホバー時のスタイル */
+    color: #555; /* ホバー時のアイコンの色 */
+}

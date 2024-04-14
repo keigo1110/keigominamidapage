@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keigo Minamida page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <div class="logo">Keigo Minamida | 南田桂吾</div>
+                <button class="hamburger">&#9776; Menu</button>
+                <div class="navbar-links">
+                    <a href="#home">Home</a>
+                    <a href="#projects">Projects</a>
+                    <!-- 他のリンクがあればここに追加 -->
+                </div>
+                <form class="search-form">
+                    <input type="search" placeholder="Search...">
+                    <button type="submit">&#x1F50D;</button>
+                </form>
+            </nav>
+        </header>
+
+        <section id="home">
+            <div class="home-flex-container">
+                <div class="profile">
+                    <img src="images/myface.jpg" alt="Keigo Minamida" class="profile-image">
+                    <h1>Keigo Minamida</h1>
+                    <p>First-year Master Course Student</p>
+                    <a href="https://lab.rekimoto.org/">The University of Tokyo<br>Rekimoto Laboratory</a>
+                    <div class="social-links">
+                        <!-- ここにソーシャルメディアのアイコンを追加 -->
+                        <a href="https://twitter.com/mKeigo1110"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100053066043602"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://github.com/keigo1110"><i class="fab fa-github"></i></a>
+                        <a href="https://qiita.com/keigo1110"><i class="fas fa-pencil-alt"></i></a>
+
+                    </div>
+                </div>
+                <div class="about">
+                    <h2>About Me</h2>
+                    <p>I am passionate about pioneering new ways for humans to interact with robots and real-world objects, aiming to expand human freedom and editing capabilities. My current research focuses on developing effective methods to process and utilize real-world information to achieve these interactions.</p>
+                    <h3>Interests</h3>
+                    <li>Human Computer Interaction</li>
+                    <li>Robotics</li>
+                    <li>Augmented Humans</li>
+                    <li>Gaussian Splatting</li>
+                    <h3>Education</h3>
+                    <p>Bachelor of Engineering, KINDAI UNIVERSITY</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="centered-title">Research Projects</h2>
+            <div class="project">
+                <img src="images/Recertif.png" alt="Project 1">
+                <div class="project-info">
+                    <h3>Recertif</h3>
+                    <p>A system that shows the robot's work status simply by directing attention to the robot.</p>
+                    <a href="https://www.youtube.com/watch?v=RC4FkGJv0MU">Demo</a>
+                </div>
+            </div>
+            <div class="project">
+                <img src="images/FSTL.png" alt="Project 1">
+                <div class="project-info">
+                    <h3>FSTL(Fractional Score Transfer Learning)</h3>
+                    <p>Improved branch trimming techniques.</p>
+                    <a href="https://www.jstage.jst.go.jp/article/pjsai/JSAI2023/0/JSAI2023_1G5OS21b04/_article/-char/ja/">Paper<br></a>
+                    <a href="https://www.docswell.com/s/weblab/56Y6VX-2023-10-23-111938">Slide</a>
+                </div>
+            </div>
+            <!-- 他のプロジェクトもこのフォーマットで追加 -->
+            <h2 class="centered-title">Other Projects</h2>
+            <div class="project">
+                <img src="images/robot_room.png" alt="Project 1">
+                <div class="project-info">
+                    <h3>Access control system with student ID card</h3>
+                    <p>When a student comes to the club room and touches his/her student ID card, he/she is notified and the lights in the room come on automatically.</p>
+                    <a href="https://www.youtube.com/watch?v=XedxYF_UYmQ">Demo(switch)<br></a>
+                    <a href="https://www.youtube.com/watch?v=oPy740TgO-8">Demo(discord)<br></a>
+                    <a href="https://www.youtube.com/watch?v=5qL3k0K_MPc">Demo(AA)</a>
+                </div>
+            </div>
+            <div class="project">
+                <img src="images/bodyop.png" alt="Project 1">
+                <div class="project-info">
+                    <h3>TURTLEBOT3 Waffle Pi Posture Manipulation</h3>
+                    <p>I created an interface on ROS 2 to control TURTLEBOT3 by estimating its posture with a camera.</p>
+                    <a href="https://www.youtube.com/watch?v=-y6T3JDFr5Q">Demo</a>
+                </div>
+            </div>
+            <div class="project">
+                <img src="images/unilidar.png" alt="Project 1">
+                <div class="project-info">
+                    <h3>Enabling the Use of Unitree L1 LiDAR without rviz</h3>
+                    <p>I have developed a method to use the Unitree L1 LiDAR without relying on rviz.(on ROS)</p>
+                    <a href="https://github.com/keigo1110/unilidar_sdk">GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ここに他のセクションを追加 -->
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <span class="year-position">2023 - Editing instructor</span>
+                <div class="experience-details">
+                    <h3>ISIS editing school</h3>
+                    <!-- <p>Details of your experience and achievements.</p> -->
+                </div>
+            </div>
+            <!-- 他の経験もこのフォーマットで追加 -->
+        </section>
+
+        <section id="awards">
+            <h2>Awards and Honors</h2>
+            <ul>
+                <li>Best presentation award from KINDAI UNIVERSITY faculty of Science and Engineering department of Mechanical Engineering(March, 2024)</li>
+                <li>Alumni President award from KINDAI UNIVERSITY Alumni Association(March, 2024)</li>
+                <!-- 他の賞や栄誉もこのリストに追加 -->
+            </ul>
+        </section>
+
+
+        <footer>
+            <p>&copy; 2024 Keigo Minamida</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
