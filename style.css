@@ -35,43 +35,92 @@ body, html {
     display: flex;
 }
 
+.logo a {
+    color: black;       /* リンクの色を黒に設定 */
+    text-decoration: none;  /* 下線を消す */
+}
+
 @media (max-width: 768px) {
-    .hamburger {
-        display: block;  /* モバイルでは表示 */
+    .navbar {
+        display: flex; /* Behave as a flex container */
+        justify-content: space-between; /* Distribute space between elements */
+        align-items: center; /* Align items in the center vertically */
+        padding: 10px; /* Adjust padding */
     }
+
+    .logo {
+        order: 1; /* Position logo first */
+        margin-left: 0; /* Remove left margin */
+        flex: 1; /* Allow the logo to grow as needed */
+        font-size: 16px; /* Adjust font size for mobile */
+        padding: 10px 0; /* Padding for touch targets */
+    }
+
+    .hamburger {
+        display: flex;
+        order: 3; /* Position hamburger menu last */
+        margin-right: 0; /* Remove right margin */
+        flex: 0 0 auto; /* Do not allow the hamburger to grow or shrink */
+    }
+
     .navbar-links {
-        display: none;  /* 初期状態では非表示 */
-        flex-direction: column;
+        display: none; /* Hide links by default */
+        flex-direction: column; /* Stack links vertically when menu is active */
         position: absolute;
         right: 0;
-        top: 60px; /* navの高さに合わせて調整 */
+        top: 60px; /* Adjust top position to height of the nav */
         background-color: #fff;
         width: 100%;
+        text-align: center; /* Center-align the links */
     }
+
     .navbar-links.active {
-        display: flex;  /* メニューボタン押下時に表示 */
+        display: flex; /* Display links when hamburger menu is active */
     }
+
     .search-form {
-        flex-grow: 1;
+        order: 2; /* Position search form in the middle */
+        flex: 1 0 auto; /* Allow search form to grow as needed */
+        margin: 0 5px; /* Add some margin to the left and right */
+    }
+
+    .search-form input[type="search"], .search-form button {
+        width: 100%; /* Full width for search input and button */
+    }
+
+    /* Adjust the profile section so it doesn't overlap with the fixed navbar */
+    .profile {
+        margin-top: 70px; /* Margin top should be at least the height of the navbar */
+    }
+
+    /* Restyle the profile image for better layout on mobile */
+    .profile-image {
+        width: 150px; /* Adjust the size as needed */
+        height: 150px; /* Adjust the size as needed */
+        margin: 20px auto; /* Center the image and add some margin */
     }
 }
 
-.navbar-links a {
+/* Styles that apply at all times, not just mobile */
+.navbar-links a, .hamburger {
     color: #333333;
     text-decoration: none;
-    margin-left: 30px;
+    padding: 10px;
+    display: inline-block;
     font-weight: bold;
 }
 
+/* Ensure the navbar is fixed at the top */
 nav.navbar {
-    position: fixed;  /* 位置を固定 */
-    top: 0;           /* 上部からの距離 */
-    left: 0;          /* 左側からの距離 */
-    width: 100%;      /* 幅を画面全体に */
-    background-color: #fff; /* 背景色 */
-    z-index: 1000;    /* 他の要素よりも前面に表示 */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 影を付けて立体感を出す */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
+
 
 .header {
     width: 90%;      /* ヘッダーの幅を画面全体に */
@@ -80,7 +129,7 @@ nav.navbar {
 
 .logo {
     margin-left: 20px;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -242,8 +291,27 @@ footer {
 }
 
 .experience-item {
-    position: relative;
-    margin-left: 20px; /* 左側の青線の幅に応じて調整してください */
+    display: flex;
+    align-items: center; /* Aligns items vertically in the center */
+    margin-bottom: 20px; /* Space between items */
+}
+
+.company-logo {
+    height: auto; /* Maintain aspect ratio */
+    width: 12%; /* Start with a small width and adjust as necessary */
+    margin-right: 20px; /* Space between logo and text */
+}
+
+.experience-content {
+    width: 95%; /* Remaining space */
+}
+.year-position, h3 {
+    color: #000000; /* White text */
+    margin: 0;
+}
+
+h3 {
+    font-size: 1.2em; /* Adjust to your preference */
 }
 
 .year-position::before {
@@ -263,6 +331,34 @@ footer {
 
 .experience-details p {
     margin: 5px 0 20px;
+}
+
+.button-link-ha {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #064f9d; /* Bootstrap primary blue for example */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button-link-shu {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #db4905; /* Bootstrap primary blue for example */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button-link:hover {
+    background-color: #0056b3; /* A darker blue on hover */
 }
 
 /* 賞と栄誉セクションのスタイル */
