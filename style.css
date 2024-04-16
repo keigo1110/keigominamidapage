@@ -6,6 +6,12 @@ body, html {
     background-color: #f4f4f4;
 }
 
+  li {
+    margin-bottom: 2px; /* リストアイテム間の間隔 */
+    padding-left: 20px; /* カスタムインデント */
+    position: relative; /* 疑似要素のための相対位置指定 */
+  }
+
 /* ナビゲーションバーのスタイルを統合 */
 .navbar {
     background-color: #ffffff;
@@ -81,7 +87,7 @@ body, html {
 
     .logo {
         flex: 1 0 auto; /* レスポンシブ調整 */
-        padding: 10px 0;
+        padding: 1px 0;
 
     }
 }
@@ -89,7 +95,7 @@ body, html {
 /* プロフィールセクション */
 .profile {
     text-align: center;
-    padding: 80px 0;
+    padding: 90px 0;
 }
 
 .profile-image {
@@ -97,6 +103,19 @@ body, html {
     width: 200px;
     height: 200px;
     border: 1px solid #eeeeee;
+}
+
+.profile a{
+    font-weight:bold;
+    display: inline-block;
+    transition:.3s;
+    transform: scale(1);
+    text-decoration: none;
+    color: #333333;
+}
+.profile a:hover{
+    font-weight:bold;
+    transform: scale(1.05);
 }
 
 /* ソーシャルリンクアイコン */
@@ -253,6 +272,7 @@ footer {
     height: auto; /* Maintain aspect ratio */
     width: 12%; /* Start with a small width and adjust as necessary */
     margin-right: 20px; /* Space between logo and text */
+    padding-left: 20px; /* Space between the left edge and the logo */
 }
 
 .experience-content {
@@ -263,8 +283,13 @@ footer {
     margin: 0;
 }
 
+h2 {
+    padding-left: 20px;
+}
+
 h3 {
     font-size: 1.2em; /* Adjust to your preference */
+    padding-top: 10px;
 }
 
 .year-position::before {
@@ -332,6 +357,22 @@ h3 {
     vertical-align: middle;
 }
 
+.awards a{
+    font-weight:bold;
+    transition:.3s;
+    padding: 0.1em 0.3em;
+    background-image: linear-gradient(to right, #f4f4f4 50%, #9fdf13 50%);/*ホバー時の背景色*/
+    background-position: 0 0;
+    background-size: 200% auto;
+    text-decoration: none;
+    color: black;/*文字色*/
+}
+.awards a:hover{
+    color:#fff;/*文字色*/
+    transition:.3s;
+    background-position: -100% 0;
+}
+
 /* FontAwesome */
 .social-links {
     /* スタイルの調整 */
@@ -350,3 +391,262 @@ h3 {
     /* ホバー時のスタイル */
     color: #555; /* ホバー時のアイコンの色 */
 }
+
+/* urlリンクボタン全体の外枠指定 */
+.snsbtniti4 {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    max-width:350px;/* ボタンを配置する場所の最大幅を指定 */
+    margin:0 auto;/* ボタン全体を中央に寄せる */
+    }
+
+    /* ulタグの内側余白なしと箇条書きの黒丸削除 */
+    ul.snsbtniti4 {
+    padding: 0!important;
+    list-style-type: none!important;
+    }
+
+    /* ボタン同士の余白調整 */
+    .snsbtniti4 li {
+    flex: 0 0 48%;/* ボタンが2列に並ぶ指定 */
+    text-align: center!important;
+    }
+
+    /* ボタン全体 */
+    .flowbtn11 {
+    font-family: 'Noto Sans Japaneses', sans-serif; /* フォント指定 */
+    position: relative;
+    display: inline-block;
+    width: 98%; /* ボタンの横幅 */
+    height:50px; /* ボタンの高さ */
+    font-size:25px;/* アイコンサイズ */
+    border-radius: 4px;/* ボタンの角を少し丸める */
+    transition: .5s;
+    text-decoration: none;
+    margin-bottom:5px;/* ボタン下の余白 */
+    }
+
+    /* アイコンとフォントの位置 */
+    .flowbtn11 i,.flowbtn11 span {
+    position:absolute;
+    top:50%;
+    left:18%;
+    -ms-transform:translate(-50%,-50%);
+    -webkit-transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%);
+    }
+
+    /* フォント調整 */
+    .flowbtn11 span {
+    font-size: 12px;
+    font-weight: bold;
+    left:56%;/* フォントを少し右へ */
+    white-space: nowrap;/* 改行させない */
+    }
+    /* インスタグラムのフォントを少し右へ */
+    .flowbtn11.my_instagram2 span {
+    left: 58%;
+    }
+
+    /* スマホ向け調整 */
+    @media(max-width:500px) {
+    .flowbtn11 span {
+    font-size: 13px;/* フォントサイズ */
+    }
+    .flowbtn11 {
+    width:100%!important; /* ボタンの横幅を最大へ */
+    }}
+
+    /* マウスホバー時、ボタン内を白に指定 */
+    .flowbtn11:hover{
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+    }
+
+    /*インスタアイコンを少し大きく */
+    .flowbtn11 i.fa-brands.fa-instagram{
+    font-size: 30px;
+    }
+
+    /* エックス枠線 */
+    .my_x2 {
+    border: solid 1px #000;
+    color: #000;
+    }
+    /* エックスマウスホバー時 */
+    .my_x2:hover{
+    border: solid 1px #000;
+    background-color: #000;
+    }
+
+    /* Instagram枠線 */
+    .my_instagram2{
+    border:solid 1px #c6529a;
+    color: #c6529a;
+    }
+    /* Instagramマウスホバー時 */
+    .my_instagram2:hover {
+    border: solid 1px #c6529a;
+    background: linear-gradient(45deg, rgba(254,212,117,1) 0%,rgba(229,61,93,1) 50%,rgba(194,49,134,1) 70%,rgba(156,56,187,1) 100%);
+    }
+
+    /* Facebook枠線 */
+    .my_facebook2 {
+    border: solid 1px #1877f2;
+    color: #1877f2;
+    }
+    /* Facebookマウスホバー時 */
+    .my_facebook2:hover {
+    border: solid 1px #1877f2;
+    background-color: #1877f2;
+    }
+
+    /* YouTube枠線 */
+    .my_youtube2 {
+    border: solid 1px #da1725;
+    color: #da1725;
+    }
+    /* YouTubeマウスホバー時 */
+    .my_youtube2:hover {
+    border: solid 1px #da1725;
+    background-color: #da1725;
+    }
+
+    /* TikTok枠線 */
+    .my_tiktok2 {
+    border: solid 1px #000;
+    color: #000;
+    }
+    /* TikTokマウスホバー時 */
+    .my_tiktok2:hover {
+    border: solid 1px #000;
+    background-color: #000;
+    }
+
+    /* Amazon枠線 */
+    .my_amazon2 {
+    border: solid 1px #ff9900;
+    color: #ff9900;
+    }
+    /* Amazonマウスホバー時 */
+    .my_amazon2:hover {
+    border: solid 1px #ff9900;
+    background-color: #ff9900;
+    }
+
+    /* LINE枠線 */
+    .my_line2 {
+    border: solid 1px #00b900;
+    color: #00b900;
+    }
+    /* LINEマウスホバー時 */
+    .my_line2:hover {
+    border: solid 1px #00b900;
+    background-color: #00b900;
+    }
+
+    /* ピンタレスト枠線 */
+    .my_pinterest2 {
+    border: solid 1px #bd081c;
+    color: #bd081c;
+    }
+    /* ピンタレストマウスホバー時 */
+    .my_pinterest2:hover {
+    border: solid 1px #bd081c;
+    background-color: #bd081c;
+    }
+
+    /* はてブ枠線 */
+    .my_hatena2 {
+    border: solid 1px #1ba5dc;
+    color: #1ba5dc;
+    }
+    /* はてブマウスホバー時 */
+    .my_hatena2:hover {
+    border: solid 1px #1ba5dc;
+    background-color: #1ba5dc;
+    }
+    /* はてブビックリマーク */
+    .my_hatena2 .fa-b::after {
+    content: "!";
+    padding-left: 5px;
+    }
+
+    /* Pocket枠線 */
+    .my_pocket2 {
+    border: solid 1px #ef3f56;
+    color: #ef3f56;
+    }
+    /* Pocketマウスホバー時 */
+    .my_pocket2:hover {
+    border: solid 1px #ef3f56;
+    background-color: #ef3f56;
+    }
+
+    /* Feedly枠線 */
+    .my_feedly2 {
+    border: solid 1px #6cc655;
+    color: #6cc655;
+    }
+    /* Feedlyマウスホバー時 */
+    .my_feedly2:hover {
+    border: solid 1px #6cc655;
+    background-color: #6cc655;
+    }
+
+    /* 楽天ROOM枠線 */
+    .my_rakutenroom2 {
+    border: solid 1px #c61d79;
+    color: #c61d79;
+    }
+    /* 楽天ROOMマウスホバー時 */
+    .my_rakutenroom2:hover {
+    border: solid 1px #c61d79;
+    background-color: #c61d79;
+    }
+
+    /* リンクドイン枠線 */
+    .my_linkedin2 {
+    border: solid 1px #0a66c2;
+    color: #0a66c2;
+    }
+    /* リンクドインマウスホバー時 */
+    .my_linkedin2:hover {
+    border: solid 1px #0a66c2;
+    background-color: #0a66c2;
+    }
+
+    /* ディスコード枠線 */
+    .my_discord2 {
+    border: solid 1px #7289da;
+    color: #7289da;
+    }
+    /* ディスコードマウスホバー時 */
+    .my_discord2:hover {
+    border: solid 1px #7289da;
+    background-color: #7289da;
+    }
+
+    /* Podcast枠線 */
+    .my_podcast2 {
+    border: solid 1px #813BF2;
+    color: #813BF2;
+    }
+    /* Podcastマウスホバー時 */
+    .my_podcast2:hover {
+    border: solid 1px #813BF2;
+    background-color: #813BF2;
+    }
+
+    /* プロフィール枠線 */
+    .my_profile2 {
+    border: solid 1px #000;
+    color: #000;
+    }
+    /* プロフィールマウスホバー時 */
+    .my_profile2:hover {
+    border: solid 1px #000;
+    background-color: #000;
+    }
