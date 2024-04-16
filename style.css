@@ -25,14 +25,23 @@ body, html {
 }
 
 .hamburger {
-    display: none;  /* デスクトップでは非表示 */
-    font-size: 24px;
+    display: none; /* デスクトップでは非表示 */
     background: none;
     border: none;
+    cursor: pointer;
+    font-size: 24px;
 }
 
-.search-form {
+.navbar-links {
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
 }
 
 .logo a {
@@ -42,73 +51,52 @@ body, html {
 
 @media (max-width: 768px) {
     .navbar {
-        display: flex; /* Behave as a flex container */
-        justify-content: space-between; /* Distribute space between elements */
-        align-items: center; /* Align items in the center vertically */
-        padding: 10px; /* Adjust padding */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
     }
 
     .logo {
-        order: 1; /* Position logo first */
-        margin-left: 0; /* Remove left margin */
-        flex: 1; /* Allow the logo to grow as needed */
-        font-size: 16px; /* Adjust font size for mobile */
-        padding: 10px 0; /* Padding for touch targets */
+        flex: 1 0 auto; /* logo can grow but does not shrink, occupies available space */
+        margin-left: 0;
+        font-size: 16px;
+        padding: 10px 0;
     }
 
     .hamburger {
-        display: flex;
-        order: 3; /* Position hamburger menu last */
-        margin-right: 0; /* Remove right margin */
-        flex: 0 0 auto; /* Do not allow the hamburger to grow or shrink */
+        flex: 0 1 auto; /* hamburger does not grow, but can shrink if necessary */
+        display: block;
+        margin-right: 0;
     }
 
     .navbar-links {
-        display: none; /* Hide links by default */
-        flex-direction: column; /* Stack links vertically when menu is active */
-        position: absolute;
-        right: 0;
-        top: 60px; /* Adjust top position to height of the nav */
-        background-color: #fff;
+        display: none;
+        flex-direction: column;
         width: 100%;
-        text-align: center; /* Center-align the links */
+    }
+
+    .navbar-links a {
+        text-align: center;
+        padding: 15px;
+        border-bottom: 1px solid #ccc;
     }
 
     .navbar-links.active {
-        display: flex; /* Display links when hamburger menu is active */
+        display: flex;
     }
 
-    .search-form {
-        order: 2; /* Position search form in the middle */
-        flex: 1 0 auto; /* Allow search form to grow as needed */
-        margin: 0 5px; /* Add some margin to the left and right */
-    }
-
-    .search-form input[type="search"], .search-form button {
-        width: 100%; /* Full width for search input and button */
-    }
-
-    /* Adjust the profile section so it doesn't overlap with the fixed navbar */
     .profile {
-        margin-top: 70px; /* Margin top should be at least the height of the navbar */
+        margin-top: 70px;
     }
 
-    /* Restyle the profile image for better layout on mobile */
     .profile-image {
-        width: 150px; /* Adjust the size as needed */
-        height: 150px; /* Adjust the size as needed */
-        margin: 20px auto; /* Center the image and add some margin */
+        width: 150px;
+        height: 150px;
+        margin: 20px auto;
     }
 }
 
-/* Styles that apply at all times, not just mobile */
-.navbar-links a, .hamburger {
-    color: #333333;
-    text-decoration: none;
-    padding: 10px;
-    display: inline-block;
-    font-weight: bold;
-}
 
 /* Ensure the navbar is fixed at the top */
 nav.navbar {

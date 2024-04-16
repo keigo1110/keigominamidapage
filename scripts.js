@@ -16,3 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // その他のJavaScript機能をここに追加
 // 例: スムーズスクロール、ポートフォリオアイテムのホバーエフェクトなど
+
+document.querySelector('.hamburger').addEventListener('click', function() {
+    var navbarLinks = document.querySelector('.navbar-links');
+    navbarLinks.style.display = navbarLinks.style.display === 'block' ? 'none' : 'block';
+});
