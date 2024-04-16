@@ -6,14 +6,7 @@ body, html {
     background-color: #f4f4f4;
 }
 
-/* コンテナスタイル */
-.container {
-    width: 90%;
-    margin: auto;
-    overflow: hidden;
-}
-
-/* ナビゲーションバー */
+/* ナビゲーションバーのスタイルを統合 */
 .navbar {
     background-color: #ffffff;
     color: #333333;
@@ -21,7 +14,28 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.logo {
+    color: black; /* リンクの色を黒に設定 */
+    text-decoration: none; /* 下線を消す */
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logo a {
+    color: black; /* 文字色を黒に設定 */
+    text-decoration: none; /* 下線を無効にする */
+    font-weight: normal; /* 文字の太さを通常に設定 */
+    background: none; /* 背景を無しに設定 */
+    font-weight: bold;
 }
 
 .hamburger {
@@ -44,36 +58,19 @@ body, html {
     padding: 10px;
 }
 
-.logo a {
-    color: black;       /* リンクの色を黒に設定 */
-    text-decoration: none;  /* 下線を消す */
-}
-
 @media (max-width: 768px) {
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-    }
-
-    .logo {
-        flex: 1 0 auto; /* logo can grow but does not shrink, occupies available space */
-        margin-left: 0;
-        font-size: 16px;
-        padding: 10px 0;
-    }
-
     .hamburger {
-        flex: 0 1 auto; /* hamburger does not grow, but can shrink if necessary */
-        display: block;
-        margin-right: 0;
+        display: block; /* モバイルで表示 */
     }
 
     .navbar-links {
-        display: none;
+        display: none; /* 初期状態では非表示 */
         flex-direction: column;
         width: 100%;
+    }
+
+    .navbar-links.active {
+        display: flex; /* JavaScriptでこのクラスをトグル */
     }
 
     .navbar-links a {
@@ -82,43 +79,11 @@ body, html {
         border-bottom: 1px solid #ccc;
     }
 
-    .navbar-links.active {
-        display: flex;
+    .logo {
+        flex: 1 0 auto; /* レスポンシブ調整 */
+        padding: 10px 0;
+
     }
-
-    .profile {
-        margin-top: 70px;
-    }
-
-    .profile-image {
-        width: 150px;
-        height: 150px;
-        margin: 20px auto;
-    }
-}
-
-
-/* Ensure the navbar is fixed at the top */
-nav.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-
-.header {
-    width: 90%;      /* ヘッダーの幅を画面全体に */
-    padding: 10px 20px; /* パディングで余白を調整 */
-}
-
-.logo {
-    margin-left: 20px;
-    font-size: 20px;
-    font-weight: bold;
 }
 
 /* プロフィールセクション */
