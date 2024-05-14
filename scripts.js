@@ -21,3 +21,21 @@ document.querySelector('.hamburger').addEventListener('click', function() {
     var navbarLinks = document.querySelector('.navbar-links');
     navbarLinks.style.display = navbarLinks.style.display === 'block' ? 'none' : 'block';
 });
+
+// スムーズスクロール機能
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// ページトップに戻るボタンの機能
+document.getElementById('back-to-top').addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
